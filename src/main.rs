@@ -2,10 +2,11 @@ use std::io;
 
 fn main() {
     let mut input: String = String::new();
-	io::stdin().read_line(&mut input).unwrap();
+	io::stdin().read_line(&mut input).expect("Faild to read line");
 
-	let mut nums = input.split_whitespace().map(|x| x.parse::<i32>().unwrap());
-	let sum = nums.next().unwrap() + nums.next().unwrap();
-	
-    println!("{}", sum);
+	let mut scanner = input.split_whitespace();
+	let a: i32 = scanner.next().unwrap().parse().unwrap();
+	let b: i32 = scanner.next().unwrap().parse().unwrap();
+
+	println!("{}", a + b);
 }
